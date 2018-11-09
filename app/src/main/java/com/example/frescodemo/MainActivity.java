@@ -1,4 +1,4 @@
-package com.example.yinyun.frescodemo;
+package com.example.frescodemo;
 
 import android.content.Context;
 import android.graphics.drawable.Animatable;

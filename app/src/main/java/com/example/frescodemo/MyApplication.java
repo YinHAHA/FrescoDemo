@@ -1,11 +1,11 @@
-package com.example.yinyun.frescodemo;
+package com.example.frescodemo;
 
 import android.app.Application;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
 
 /**
- * User: yinyun
+ * User: yinhaha
  * Date: 2018/11/6
  * Description:
  */
