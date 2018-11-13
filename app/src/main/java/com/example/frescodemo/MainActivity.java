@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private List<String> datas = new ArrayList<>();
 
     private SimpleDraweeView simpleDraweeView1;
+    private SimpleDraweeView simpleDraweeView2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         String urlString1 = "http://img5.taoche.cn/33/76311fcc-021815e0u5.jpg";
-        FrescoUtils.getInstance().setImage(simpleDraweeView1, urlString1, new BaseControllerListener() {
+        FrescoImageUtils.getInstance().setImage(simpleDraweeView1, urlString1, new BaseControllerListener() {
 
             @Override
             public void onFinalImageSet(String id, @Nullable Object imageInfo, @Nullable Animatable animatable) {
@@ -59,6 +60,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        String urlString2 = "12323232312";
+        FrescoImageUtils.getInstance().setImage(simpleDraweeView2, urlString2,-1,R.drawable.failed);
+
     }
 
 
@@ -68,19 +73,20 @@ public class MainActivity extends AppCompatActivity {
         mClearCache = findViewById(R.id.clear_cache_size);
         mShowCache = findViewById(R.id.show_cache_size);
         simpleDraweeView1 = findViewById(R.id.simpleDraweeView1);
+        simpleDraweeView2 = findViewById(R.id.simpleDraweeView2);
 
         mGetCache.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mShowCache.setText(FrescoUtils.getInstance().getDiskCache() + "");
+                mShowCache.setText(FrescoImageUtils.getInstance().getDiskCache() + "");
             }
         });
 
         mClearCache.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FrescoUtils.getInstance().clearDiskCache();
-                mShowCache.setText(FrescoUtils.getInstance().getDiskCache() + "");
+                FrescoImageUtils.getInstance().clearDiskCache();
+                mShowCache.setText(FrescoImageUtils.getInstance().getDiskCache() + "");
             }
         });
     }
@@ -175,7 +181,7 @@ public class MainActivity extends AppCompatActivity {
 
             String url = mList.get(position);
 
-            FrescoUtils.getInstance().setImage(holder.simpleDraweeView, url);
+            FrescoImageUtils.getInstance().setImage(holder.simpleDraweeView, url);
 
             return convertView;
         }
