@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         String urlString1 = "http://img5.taoche.cn/33/76311fcc-021815e0u5.jpg";
-        ImageLoaderUtils.getInstance().setImage(simpleDraweeView1, urlString1, new BaseControllerListener() {
+        FrescoUtils.getInstance().setImage(simpleDraweeView1, urlString1, new BaseControllerListener() {
 
             @Override
             public void onFinalImageSet(String id, @Nullable Object imageInfo, @Nullable Animatable animatable) {
@@ -72,15 +72,15 @@ public class MainActivity extends AppCompatActivity {
         mGetCache.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mShowCache.setText(ImageLoaderUtils.getInstance().getDiskCache() + "");
+                mShowCache.setText(FrescoUtils.getInstance().getDiskCache() + "");
             }
         });
 
         mClearCache.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ImageLoaderUtils.getInstance().clearDiskCache();
-                mShowCache.setText(ImageLoaderUtils.getInstance().getDiskCache() + "");
+                FrescoUtils.getInstance().clearDiskCache();
+                mShowCache.setText(FrescoUtils.getInstance().getDiskCache() + "");
             }
         });
     }
@@ -175,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
 
             String url = mList.get(position);
 
-            ImageLoaderUtils.getInstance().setImage(holder.simpleDraweeView, url);
+            FrescoUtils.getInstance().setImage(holder.simpleDraweeView, url);
 
             return convertView;
         }

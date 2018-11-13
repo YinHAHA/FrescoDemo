@@ -11,20 +11,20 @@ import com.facebook.drawee.view.SimpleDraweeView;
 import com.facebook.imagepipeline.request.ImageRequest;
 import com.facebook.imagepipeline.request.ImageRequestBuilder;
 
-public class ImageLoaderUtils {
+public class FrescoUtils {
 
     private Context mContext;
 
-    private static ImageLoaderUtils instance;
+    private static FrescoUtils instance;
 
-    public ImageLoaderUtils(Context context) {
+    public FrescoUtils(Context context) {
         this.mContext = context;
         instance = this;
     }
 
-    public static ImageLoaderUtils getInstance() {
+    public static FrescoUtils getInstance() {
         if (instance == null) {
-            instance = new ImageLoaderUtils(MyApplication.getInstance());
+            instance = new FrescoUtils(MyApplication.getInstance());
         }
         return instance;
     }
